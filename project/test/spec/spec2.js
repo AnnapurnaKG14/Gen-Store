@@ -32,7 +32,8 @@ describe('Grocery shopping', () =>
         //await driver.getContexts();
 
         await driver.switchContext('WEBVIEW_com.androidsample.generalstore')
-        await $('//*[@name="q"]').setValue("dhfvhksd")
+        await $('//*[@name="q"]').setValue("Nineleaps")
+        await driver.switchContext('NATIVE_APP')
         await driver.pause(10000)
     });
 });
