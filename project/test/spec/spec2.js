@@ -1,7 +1,8 @@
-const { default: DriverCommand } = require("appium/build/lib/cli/driver-command");
+//const { default: DriverCommand } = require("appium/build/lib/cli/driver-command");
 
-describe('Grocery shopping', () => {
-    it('Sterting with the initial login page', async() => {
+describe('Grocery shopping', () =>
+ {
+    it('Starting with the initial login page', async() => {
         await $('//*[@text="Enter name here"]').setValue("Annapurna K G")
         await $("//*[@text='Female']").click()
         await $("//*[@resource-id='com.androidsample.generalstore:id/spinnerCountry']").click()
@@ -29,10 +30,9 @@ describe('Grocery shopping', () => {
     it('web view', async() => {
         //now we are in the google page 
         //await driver.getContexts();
+
         await driver.switchContext('WEBVIEW_com.androidsample.generalstore')
         await $('//*[@name="q"]').setValue("dhfvhksd")
         await driver.pause(10000)
-        await DriverCommand.back()
     });
 });
-

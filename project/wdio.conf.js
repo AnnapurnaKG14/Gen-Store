@@ -26,7 +26,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        'test/spec/**/spec2.js'
+        'test/spec/spec2.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -59,7 +59,7 @@ exports.config = {
         'appium:platformName': 'Android',
         'appium:deviceName': 'Annapurna',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), 'app/android/General-Store.apk')
+        'appium:app': '/home/nineleaps/Downloads/General-Store.apk'
     }],
     //
     // ===================
