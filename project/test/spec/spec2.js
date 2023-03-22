@@ -12,6 +12,7 @@ describe('Grocery shopping', () =>
     });
 
     it('Adding the products to cart now',async () => {
+        
         /*here since all products are having the same resource id as well as other values,
         the distinguishing factor is element id ,
         hence we will be using the same*/
@@ -28,9 +29,9 @@ describe('Grocery shopping', () =>
     });
 
     it('web view', async() => {
+        
         //now we are in the google page 
         //await driver.getContexts();
-
         await driver.switchContext('WEBVIEW_com.androidsample.generalstore')
         await $('//*[@name="q"]').setValue("Nineleaps")
         await driver.switchContext('NATIVE_APP')
