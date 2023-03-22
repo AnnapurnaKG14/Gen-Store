@@ -1,3 +1,5 @@
+const { default: DriverCommand } = require("appium/build/lib/cli/driver-command");
+
 describe('Grocery shopping', () => {
     it('Sterting with the initial login page', async() => {
         await $('//*[@text="Enter name here"]').setValue("Annapurna K G")
@@ -21,7 +23,16 @@ describe('Grocery shopping', () => {
 
         await $("//*[@class='android.widget.CheckBox' and @index='1']").click()
         await $("//*[@class='android.widget.Button' and @index='2']").click()
-        await driver.pause(6000)
+        await driver.pause(5000)
+    });
+
+    it('web view', async() => {
+        //now we are in the google page 
+        //await driver.getContexts();
+        await driver.switchContext('WEBVIEW_com.androidsample.generalstore')
+        await $('//*[@name="q"]').setValue("dhfvhksd")
+        await driver.pause(10000)
+        await DriverCommand.back()
     });
 });
 
